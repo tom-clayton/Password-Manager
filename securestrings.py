@@ -36,7 +36,6 @@ def decrypt(data, password, iv):
     try:
         return unpad(cipher.decrypt(data), 16)
     except Exception as e: 
-        print(e)
         return None
 
 def save_string(filename, password, string):
