@@ -248,8 +248,10 @@ class HandleCreator(object):
         
 
     def on_create(self):
-        """Create the password."""     
+        """Create the password.""" 
+           
         self.handle = self.handle or self.new_handle.get()
+        print("on_create: handle:", self.handle) 
         if self.handle:
             self.create_password()
             self.ui.window.destroy()

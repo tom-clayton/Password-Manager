@@ -1,4 +1,6 @@
 
+from random import choice
+
 class PasswordCreator(object):
     """Creates a random password.""" 
     lower_chars = list(range(97, 123))
