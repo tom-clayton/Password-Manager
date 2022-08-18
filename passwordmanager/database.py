@@ -7,7 +7,7 @@ class for controlling the encrypted database of passwords.
 
 import os
 import json
-import passwordmanager.securestrings as sstrings
+from passwordmanager.securestrings import save_string, load_string
 from threading import Lock
 
 class Database(object):
@@ -31,7 +31,7 @@ class Database(object):
         Arguments:
         data - the dictionary with all the data.
         master - the master password."""
-        sstrings.save_string(self.filename, master, json.dumps(data))
+        save_string(self.filename, master, json.dumps(data))
             
     def load(self, master):
         """load dictionary from file.
@@ -41,7 +41,7 @@ class Database(object):
         Returns:
         the dictionary with all the data."""
         try:
-            return json.loads(sstrings.load_string(self.filename, master))
+            return json.loads(load_string(self.filename, master))
         except (AttributeError, ValueError):
             raise PasswordError
 

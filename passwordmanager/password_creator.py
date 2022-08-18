@@ -9,18 +9,19 @@ class PasswordCreator(object):
     special_chars = [33] + list(range(35, 48)) + list(range(60, 65))\
                     + list(range(91, 97))
         
-    def create(self, length, uppercase, digits, special):
+    def create(self, options):
         """Create password from pool.
         Check password has at least one character from each selected
         category.
 
-        Attributes:
+        Attributes: from options list:
         length - length of password
         uppercase - include uppercase characters
         digits - include digits
         special - include special characters
         """
-
+        length, uppercase, digits, special = options
+        
         pool = []
         pool += self.lower_chars
         if uppercase:

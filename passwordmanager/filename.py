@@ -1,2 +1,2 @@
 
-FILENAME = "database path goes here"
+FILENAME = "filepath goes here"

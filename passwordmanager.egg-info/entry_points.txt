@@ -1,0 +1,3 @@
+[console_scripts]
+pman = passwordmanager.controller:main
+
